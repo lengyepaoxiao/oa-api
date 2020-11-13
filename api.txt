@@ -1,0 +1,64 @@
+﻿ https://api.brgrand.cn/
+
+1. 登陆   已完成
+v1/oauth/login
+参数：
+code
+返回 status =1 成功进入， =0 跳到绑定员工手机号页
+
+2. 保存用户信息  已完成
+v1/user/save_user_info
+参数：
+uid
+token
+mobile 手机号码
+job_no 员工号
+返回：status = 1成功 =0失败
+
+3. 用取用户信息  已完成
+v1/user/get_user_info
+参数：
+uid
+token
+
+4. 获取任务列表
+v1/task/get_lists
+参数：
+status =0 未处理 =1已处理
+uid
+token
+page    1默认第一页
+pagesize  页的条数 ，默认40
+
+5. 查看某个任务信息
+v1/task/get_info
+参数：
+task_id 任务ID
+uid
+token
+
+返回字段信息
+
+6. 更新任务派单图片
+v1/task/upload_task_img
+参数：
+uid
+token
+media  媒体图片源
+task_id 任务ID
+
+返回 status =1 成功 =0失败
+
+7. 获得转单用户列表
+v1/user/get_task_list
+参数：
+uid
+token
+
+7. 任务转单
+v1/task/change_user_task
+参数：
+task_id 任务ID
+task_uid 任务用户ID（转给哪个用户）
+uid
+token
